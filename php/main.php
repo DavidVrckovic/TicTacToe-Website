@@ -62,87 +62,58 @@ if (!isset($_SESSION["logged_in"])) {
 
 
 // Title & Favicon
-$favicon_image = $directory_prefix . "Assets/Images/Icons/TicTacToe Logo.png";
+$favicon_url = $directory_prefix . "Assets/Icons/TicTacToe Logo Icon.svg";
 
 // CSS files
-$index_css = $directory_prefix . "Assets/Styles/index.css";
-$navigation_css = $directory_prefix . "Assets/Styles/navigation.css";
-$footer_css = $directory_prefix . "Assets/Styles/footer.css";
-$back_to_top_css = $directory_prefix . "Assets/Styles/back_to_top.css";
-$authentication_css = $directory_prefix . "Assets/Styles/authentication.css";
-$tictactoe_css = $directory_prefix . "Assets/Styles/tictactoe.css";
-$ultimateTictactoe_css = $directory_prefix . "Assets/Styles/ultimateTictactoe.css";
+$index_css_url = $directory_prefix . "Assets/Styles/index.css";
+$navigation_css_url = $directory_prefix . "Assets/Styles/navigation.css";
+$footer_css_url = $directory_prefix . "Assets/Styles/footer.css";
+$back_to_top_css_url = $directory_prefix . "Assets/Styles/back_to_top.css";
+$authentication_css_url = $directory_prefix . "Assets/Styles/authentication.css";
+
+$tictactoe_css_url = $directory_prefix . "Assets/Styles/tictactoe.css";
 
 // Script files
-$main_script = $directory_prefix . "Assets/Scripts/main.js";
-$navigation_script = $directory_prefix . "Assets/Scripts/navigation.js";
-$back_to_top_script = $directory_prefix . "Assets/Scripts/back_to_top.js";
-$tictactoe_script = $directory_prefix . "Assets/Scripts/tictactoe.js";
-$ultimateTictactoe_script = $directory_prefix . "Assets/Scripts/ultimateTictactoe.js";
+$main_script_url = $directory_prefix . "Assets/Scripts/main.js";
+$navigation_script_url = $directory_prefix . "Assets/Scripts/navigation.js";
+$back_to_top_script_url = $directory_prefix . "Assets/Scripts/back_to_top.js";
+
+$tictactoe_script_url = $directory_prefix . "Assets/Scripts/tictactoe.js";
+$ultimatetictactoe_script_local_url = $directory_prefix . "Assets/Scripts/ultimatetictactoe_local.js";
+$ultimatetictactoe_script_online_url = $directory_prefix . "Assets/Scripts/ultimatetictactoe_online.js";
 
 // Parts
-$navigation_php = $directory_prefix . "Assets/Parts/navigation.php";
-$footer_php = $directory_prefix . "Assets/Parts/footer.php";
-$back_to_top_php = $directory_prefix . "Assets/Parts/back_to_top.php";
-$auth_login_php = $directory_prefix . "php/auth_login.php";
-$auth_register_php = $directory_prefix . "php/auth_register.php";
-$login_php = $directory_prefix . "login/";
-$register_php = $directory_prefix . "register/";
-$play_php = $directory_prefix . "play/";
-
-
+$header_php_url = $directory_prefix . "Assets/Parts/header.php";
+$footer_php_url = $directory_prefix . "Assets/Parts/footer.php";
+$back_to_top_php_url = $directory_prefix . "Assets/Parts/back_to_top.php";
+$auth_login_php_url = $directory_prefix . "php/auth_login.php";
+$auth_register_php_url = $directory_prefix . "php/auth_register.php";
 
 // Header & Navigation
-$header_image = $directory_prefix . "Assets/Images/Icons/TicTacToe Logo.png";
+$logo_icon_url = $directory_prefix . "Assets/Icons/TicTacToe Logo Icon.svg";
+$nav_account_icon_url = $directory_prefix . "Assets/Icons/Account Icon.svg";
+$nav_menu_icon_url = $directory_prefix . "Assets/Icons/Menu Icon 2.svg";
+$nav_options_icon_url = $directory_prefix . "Assets/Icons/Options Icon.svg";
 
-$nav_faq = $directory_prefix . "faq";
-$nav_faq_icon = $directory_prefix . "Assets/Images/Navigation/faq_icon_black.png";
-$nav_faq_icon_black = $directory_prefix . "Assets/Images/Navigation/faq_icon_black.png";
-$nav_faq_icon_gold = $directory_prefix . "Assets/Images/Navigation/faq_icon_gold.png";
-$nav_faq_icon_white = $directory_prefix . "Assets/Images/Navigation/faq_icon_white.png";
+$nav_tictactoe_icon = $directory_prefix . "Assets/Icons/TicTacToe Icon.svg";
+$nav_ultimatetictactoe_icon = $directory_prefix . "Assets/Icons/UltimateTicTacToe Icon.svg";
 
-$nav_gamemodes = $directory_prefix . "gamemodes";
-$nav_gamemodes_icon = $directory_prefix . "Assets/Images/Navigation/gamemodes_icon_black.png";
-$nav_gamemodes_icon_black = $directory_prefix . "Assets/Images/Navigation/gamemodes_icon_black.png";
-$nav_gamemodes_icon_gold = $directory_prefix . "Assets/Images/Navigation/gamemodes_icon_gold.png";
-$nav_gamemodes_icon_white = $directory_prefix . "Assets/Images/Navigation/gamemodes_icon_white.png";
+// URLs
+$nav_home_url = $directory_prefix . "";
+$nav_account_url = $directory_prefix . "account/";
+$nav_login_url = $directory_prefix . "login/";
+$nav_logout_url = $directory_prefix . "logout/";
+$nav_register_url = $directory_prefix . "register/";
 
-$nav_home = $directory_prefix . "";
-$nav_home_icon = $directory_prefix . "Assets/Images/Navigation/home_icon_black.png";
-$nav_home_icon_black = $directory_prefix . "Assets/Images/Navigation/home_icon_black.png";
-$nav_home_icon_gold = $directory_prefix . "Assets/Images/Navigation/home_icon_gold.png";
-$nav_home_icon_white = $directory_prefix . "Assets/Images/Navigation/home_icon_white.png";
+$play_url = $directory_prefix . "play/";
+$play_tictactoe_url = $directory_prefix . "play/tictactoe/";
+$play_ultimatetictactoe_local_url = $directory_prefix . "play/ultimatetictactoe/?game_type=local";
+$play_ultimatetictactoe_online_url = $directory_prefix . "play/ultimatetictactoe/";
 
-$nav_info = $directory_prefix . "info";
-$nav_info_icon = $directory_prefix . "Assets/Images/Navigation/info_icon_black.png";
-$nav_info_icon_black = $directory_prefix . "Assets/Images/Navigation/info_icon_black.png";
-$nav_info_icon_gold = $directory_prefix . "Assets/Images/Navigation/info_icon_gold.png";
-$nav_info_icon_white = $directory_prefix . "Assets/Images/Navigation/info_icon_white.png";
 
-$nav_menu = $directory_prefix . "menu";
-$nav_menu_icon = $directory_prefix . "Assets/Images/Navigation/menu_icon_black.png";
-$nav_menu_icon_black = $directory_prefix . "Assets/Images/Navigation/menu_icon_black.png";
-$nav_menu_icon_gold = $directory_prefix . "Assets/Images/Navigation/menu_icon_gold.png";
-$nav_menu_icon_white = $directory_prefix . "Assets/Images/Navigation/menu_icon_white.png";
 
-$nav_news = $directory_prefix . "news";
-$nav_news_icon = $directory_prefix . "Assets/Images/Navigation/news_icon_black.png";
-$nav_news_icon_black = $directory_prefix . "Assets/Images/Navigation/news_icon_black.png";
-$nav_news_icon_gold = $directory_prefix . "Assets/Images/Navigation/news_icon_gold.png";
-$nav_news_icon_white = $directory_prefix . "Assets/Images/Navigation/news_icon_white.png";
 
-$nav_options = $directory_prefix . "options";
-$nav_options_icon = $directory_prefix . "Assets/Images/Navigation/options_icon_black.png";
-$nav_options_icon_black = $directory_prefix . "Assets/Images/Navigation/options_icon_black.png";
-$nav_options_icon_gold = $directory_prefix . "Assets/Images/Navigation/options_icon_gold.png";
-$nav_options_icon_white = $directory_prefix . "Assets/Images/Navigation/options_icon_white.png";
-
-$nav_store = $directory_prefix . "store";
-$nav_store_icon = $directory_prefix . "Assets/Images/Navigation/store_icon_black.png";
-$nav_store_icon_black = $directory_prefix . "Assets/Images/Navigation/store_icon_black.png";
-$nav_store_icon_gold = $directory_prefix . "Assets/Images/Navigation/store_icon_gold.png";
-$nav_store_icon_white = $directory_prefix . "Assets/Images/Navigation/store_icon_white.png";
-
+// # TO DELETE
 $nav_apply = $directory_prefix . "apply";
 
 
@@ -152,35 +123,9 @@ if (!isset($_SESSION["logged_in"])) {
     $nav_auth = $directory_prefix . "login";
 } else {
     $nav_auth = $directory_prefix . "logout";
-    $nav_account = $directory_prefix . "account";
 }
-
-
-
-$nav_icons = "
-    <script>
-        const nav_faq_icon = '$nav_faq_icon';
-        const nav_gamemodes_icon = '$nav_gamemodes_icon';
-        const nav_home_icon = '$nav_home_icon';
-        const nav_info_icon = '$nav_info_icon';
-        const nav_news_icon = '$nav_news_icon';
-        const nav_options_icon = '$nav_options_icon';
-        const nav_store_icon = '$nav_store_icon';
-
-        const nav_faq_icon_darkmode = '$nav_faq_icon_white';
-        const nav_gamemodes_icon_darkmode = '$nav_gamemodes_icon_white';
-        const nav_home_icon_darkmode = '$nav_home_icon_white';
-        const nav_info_icon_darkmode = '$nav_info_icon_white';
-        const nav_news_icon_darkmode = '$nav_news_icon_white';
-        const nav_options_icon_darkmode = '$nav_options_icon_white';
-        const nav_store_icon_darkmode = '$nav_store_icon_white';
-    </script>
-";
 
 
 
 // Back to top
 $back_to_top_image = $directory_prefix . "Assets/Images/Back to top/Back to top - White.png";
-
-
-?>
