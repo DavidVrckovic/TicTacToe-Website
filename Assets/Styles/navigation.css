@@ -1,0 +1,185 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 2px solid var(--secondary_color);
+    padding: 10px calc(1% + 20px);
+
+    background-color: var(--primary_color);
+}
+
+header * {
+    background-color: var(--primary_color);
+}
+
+nav {
+    position: relative;
+}
+
+nav.multiple_elements {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav.left.multiple_elements button.nav {
+    margin-right: 20px;
+}
+
+nav.right.multiple_elements button.nav {
+    margin-left: 20px;
+}
+
+
+/* Navigation Button & Link */
+a.nav,
+button.nav,
+img.nav,
+svg.nav {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    text-decoration: none;
+}
+
+a.nav:hover,
+button:hover {
+    cursor: pointer;
+}
+
+span.nav {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    color: var(--primary_text_color);
+    transition: color 0.2s;
+}
+
+.svg_fill {
+    fill: var(--primary_text_color);
+    transition: fill 0.2s;
+}
+
+.svg_fill_exclusive {
+    fill: var(--primary_text_color);
+}
+
+.svg_stroke {
+    stroke: var(--primary_text_color);
+    transition: stroke 0.2s;
+}
+
+.svg_stroke_exclusive {
+    stroke: var(--primary_text_color);
+}
+
+a.nav:hover .svg_fill,
+button.nav:hover .svg_fill {
+    fill: var(--hover_link_color);
+}
+
+a.nav:hover .svg_stroke,
+button.nav:hover .svg_stroke {
+    stroke: var(--hover_link_color);
+}
+
+
+/* Logo */
+a.logo {
+    display: flex;
+    align-items: center;
+
+    width: auto;
+}
+
+a.logo:hover span.nav {
+    color: var(--hover_link_color);
+}
+
+span#nav_logo_text {
+    margin-left: 20px;
+}
+
+
+
+dialog.nav {
+    top: 40px;
+
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    box-shadow: var(--dropdown_box_shadow);
+
+    min-width: 200px;
+
+    z-index: 101;
+}
+
+
+a.dialog_link,
+button.dialog_button {
+    display: block;
+
+    border: none;
+    padding: 12px 16px;
+
+    font-size: 14px;
+
+    color: var(--primary_text_color);
+    text-align: left;
+    text-decoration: none;
+}
+
+button.dialog_button {
+    width: 100%;
+}
+
+dialog a.dialog_link:hover,
+dialog button.dialog_button:hover {
+    background-color: var(--dropdown_background);
+}
+
+
+#nav_options_dialog {
+    left: -140px;
+}
+
+#nav_menu_dialog {
+    left: -190px;
+
+    min-width: 300px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    span.nav {
+        font-size: 1.3rem;
+    }
+}
+
+
+#dialog_account_link {
+    display: flex;
+    align-items: center;
+}
+
+#dialog_account_link:hover span {
+    background-color: var(--dropdown_background);
+}
+
+#dialog_account_img {
+    margin-right: 10px;
+    
+    width: 20px;
+    height: 20px;
+}
