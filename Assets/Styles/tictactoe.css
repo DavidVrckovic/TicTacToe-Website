@@ -1,0 +1,554 @@
+:root {
+    --tictactoe_game_board_gap: 2px;
+    --tictactoe_game_cell_size: 150px;
+    --tictactoe_game_mark_size: calc(var(--tictactoe_game_cell_size) * .9);
+    --tictactoe_game_mark_x_color: #0000ff;
+    --tictactoe_game_mark_x_hover_color: lightgray;
+    --tictactoe_game_mark_o_color: #ff0000;
+    --tictactoe_game_mark_o_hover_color: #ff00003a;
+    --tictactoe_game_board_active_color: #caffca;
+    --tictactoe_game_board_active_x_color: #dcdcff;
+    --tictactoe_game_board_active_o_color: #ffdede;
+    --tictactoe_game_board_draw_color: #bdffbd;
+}
+
+.dark_theme {
+    --tictactoe_game_mark_x_color: #0000ff;
+    --tictactoe_game_mark_x_hover_color: #444444;
+    --tictactoe_game_mark_o_color: #ff0000;
+    --tictactoe_game_mark_o_hover_color: #ff00003a;
+    --tictactoe_game_board_active_x_color: #3a3a44;
+    --tictactoe_game_board_active_o_color: #463c3c;
+    --tictactoe_game_board_draw_color: #1f5000;
+}
+
+.ultimate_game_board {
+    --tictactoe_game_cell_size: 50px;
+    --tictactoe_game_mark_size: calc(var(--tictactoe_game_cell_size) * .9);
+}
+
+.ultimate_game_board,
+.game_board {
+    display: none;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+    background-color: var(--secondary_color);
+}
+
+.ultimate_game_board {
+    gap: calc(var(--tictactoe_game_board_gap) * 3);
+    margin-bottom: 4rem;
+}
+
+.game_board {
+    gap: var(--tictactoe_game_board_gap);
+    margin: 2rem 0 4rem 0;
+}
+
+.ultimate_game_board .game_board {
+    margin: 0;
+}
+
+.game_cell {
+    background-color: var(--primary_color);
+    width: var(--tictactoe_game_cell_size);
+    height: var(--tictactoe_game_cell_size);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    cursor: pointer;
+}
+
+.game_cell.x,
+.game_cell.o {
+    cursor: not-allowed;
+}
+
+
+
+/* Cell content styles */
+.game_cell.x::before,
+.game_cell.x::after {
+    background-color: var(--tictactoe_game_mark_x_color);
+}
+
+.game_cell.o::before {
+    border: calc(var(--tictactoe_game_mark_size) * 0.15) solid var(--tictactoe_game_mark_o_color);
+}
+
+
+
+/* X styles */
+.game_cell.x::before,
+.game_cell.x::after,
+.x .game_cell:not(.x):not(.o):hover::before,
+.x .game_cell:not(.x):not(.o):hover::after {
+    content: '';
+
+    position: absolute;
+
+    width: calc(var(--tictactoe_game_mark_size) * .15);
+    height: calc(var(--tictactoe_game_mark_size) * 1.05);
+}
+
+.game_cell.x::before,
+.x .game_cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+.game_cell.x::after,
+.x .game_cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+
+
+/* O styles */
+/* .game_cell.o::before,
+.game_cell.o::after,
+.o .game_cell:not(.x):not(.o):hover::before,
+.o .game_cell:not(.x):not(.o):hover::after {
+    content: '';
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.game_cell.o::before,
+.o .game_cell:not(.x):not(.o):hover::before {
+    width: calc(var(--tictactoe_game_mark_size) * .9);
+    height: calc(var(--tictactoe_game_mark_size) * .9);
+}
+
+.game_cell.o::after,
+.o .game_cell:not(.x):not(.o):hover::after {
+    width: calc(var(--tictactoe_game_mark_size) * .65);
+    height: calc(var(--tictactoe_game_mark_size) * .65);
+
+    background-color: var(--primary_color);
+} */
+
+.game_cell.o::before,
+.o .game_cell:not(.x):not(.o):hover::before {
+    content: '';
+
+    position: absolute;
+
+    width: calc(var(--tictactoe_game_mark_size) * .6);
+    height: calc(var(--tictactoe_game_mark_size) * .6);
+
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+
+
+/* Hover styles */
+.x .game_cell:not(.x):not(.o):hover::before,
+.x .game_cell:not(.x):not(.o):hover::after {
+    background-color: var(--tictactoe_game_mark_x_hover_color);
+}
+
+.o .game_cell:not(.x):not(.o):hover::before {
+    border: calc(var(--tictactoe_game_mark_size) * 0.15) solid var(--tictactoe_game_mark_o_hover_color);
+}
+
+
+
+/* Winning message styles */
+.winning-message {
+    z-index: 1;
+
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, .9);
+    color: white;
+    font-size: 5rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winning-message button {
+    background-color: white;
+    font-size: 3rem;
+
+    border: 1px solid black;
+
+    padding: .25em .5em;
+
+    cursor: pointer;
+}
+
+.winning-message button:hover {
+    background-color: lightgray;
+    font-size: 3rem;
+
+    border: 1px solid black;
+
+    padding: .25em .5em;
+
+    cursor: pointer;
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+
+
+#main_title {
+    font-size: calc(1.8rem + 0.2vw);
+    margin-top: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+#main_subtitle {
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+}
+
+button.play {
+    padding: 16px 20px;
+    margin: 8px 0px;
+    width: calc(20vw + 200px);
+
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button.play:disabled {
+    background-color: #027a5470;
+}
+
+button#start_game_button,
+button#create_game_button {
+    background-color: var(--primary_button_color);
+}
+
+button#start_game_button:hover,
+button#create_game_button:hover {
+    background-color: var(--primary_button_hover_color);
+}
+
+button#join_game_button {
+    background-color: var(--secondary_button_color);
+}
+
+button#join_game_button:hover {
+    background-color: var(--secondary_button_hover_color);
+}
+
+button#invite_button {
+    background-color: var(--secondary_button_color);
+}
+
+button#invite_button:hover {
+    background-color: var(--secondary_button_hover_color);
+}
+
+
+.board_disabled,
+.board_disabled .game_cell {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+
+
+
+.x .board_active .game_cell {
+    background-color: var(--tictactoe_game_board_active_x_color);
+}
+
+.o .board_active .game_cell {
+    background-color: var(--tictactoe_game_board_active_o_color);
+}
+
+.game_board {
+    position: relative;
+}
+
+.game_board_state {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.win_x .game_board_state::before,
+.win_x .game_board_state::after,
+.win_o .game_board_state::before {
+    background-color: var(--tictactoe_game_mark_x_color);
+}
+
+.win_x .game_board_state::before,
+.win_x .game_board_state::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(var(--tictactoe_game_mark_size) * .35);
+    height: calc(var(--tictactoe_game_mark_size) * 4.5);
+}
+
+.win_x .game_board_state::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.win_x .game_board_state::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+/*
+.win_x .game_board_state::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(var(--tictactoe_game_mark_size) * .9);
+    height: calc(var(--tictactoe_game_mark_size) * .9);
+    
+    background:
+        linear-gradient(45deg, var(--tictactoe_game_mark_x_color) 20%, transparent 20%, transparent 80%, var(--tictactoe_game_mark_x_color) 80%),
+        linear-gradient(-45deg, var(--tictactoe_game_mark_x_color) 20%, transparent 20%, transparent 80%, var(--tictactoe_game_mark_x_color) 80%);
+    border-radius: 0;
+    
+    transform: translate(-50%, -50%);
+}*/
+
+.win_o .game_board_state::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(var(--tictactoe_game_mark_size) * 2.7);
+    height: calc(var(--tictactoe_game_mark_size) * 2.7);
+
+    border: calc(var(--tictactoe_game_mark_size) * 0.35) solid var(--tictactoe_game_mark_o_color);
+    background-color: transparent;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.draw .game_cell {
+    background-color: var(--tictactoe_game_board_draw_color);
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --tictactoe_game_cell_size: 27vw;
+    }
+
+    .ultimate_game_board {
+        --tictactoe_game_cell_size: 9vw;
+    }
+
+    #main_title {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.2rem;
+    }
+
+    #main_subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/* Game Section */
+section#game_section {
+    min-height: 75vh;
+}
+
+dialog#game_info {
+    position: fixed;
+    bottom: 0;
+    width: 440px;
+    max-width: 78vw;
+    z-index: 1;
+    background: var(--primary_color);
+    color: var(--primary_text_color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 1.2em;
+    border: none;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.2em;
+    gap: 1em;
+}
+
+.player_score_left,
+.player_score_right {
+    position: relative;
+    font-weight: bold;
+}
+
+.player_score_left::before {
+    content: "X";
+    color: var(--tictactoe_game_mark_x_color);
+}
+
+.player_score_right::before {
+    content: '';
+
+    position: absolute;
+
+    width: calc(var(--tictactoe_game_mark_size) * .2);
+    height: calc(var(--tictactoe_game_mark_size) * .2);
+
+    background-color: transparent;
+    border-radius: 50%;
+    border: calc(var(--tictactoe_game_mark_size) * 0.05) solid var(--tictactoe_game_mark_o_color);
+}
+
+.player_score_left::before,
+.player_score_right::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.player_score span {
+    position: relative;
+    z-index: 1;
+}
+
+#current_player_text {
+    flex: 1;
+    text-align: center;
+}
+
+#current_player_mark {
+    font-weight: bold;
+}
+
+.x#current_player_mark {
+    color: var(--tictactoe_game_mark_x_color);
+}
+
+.o#current_player_mark {
+    color: var(--tictactoe_game_mark_o_color);
+}
+
+
+
+
+#game_finished_dialog,
+#game_invite_dialog {
+    min-width: 320px;
+    padding: 2em 1.5em;
+    border-radius: 16px;
+    background: var(--primary_color);
+    color: var(--primary_text_color);
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.game_finished_message {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+
+.game_finished_actions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.invite_actions {
+    margin-top: 1.5em;
+}
+
+.game_finished_button,
+.invite_button {
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    background: var(--secondary_button_color);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.game_finished_button:hover,
+.invite_button:hover {
+    background: var(--secondary_button_hover_color);
+}
+
+#exit_button {
+    background: var(--primary_button_color);
+}
+
+#exit_button:hover {
+    background: var(--primary_button_hover_color);
+}
+
+.invite_suggestions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #222;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.invite_suggestions li {
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.invite_suggestions li:hover {
+    background: #0078d4;
+    color: #fff;
+}
+
+.invite_search {
+    position: relative;
+    margin-bottom: 1em;
+}
