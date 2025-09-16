@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 850">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 150px;
+      }
+    </style>
+  </defs>
+  <g id="menu_icon">
+    <line id="line_top" class="cls-1" x1="75" y1="75" x2="875" y2="75"/>
+    <line id="line_middle" class="cls-1" x1="75" y1="425" x2="875" y2="425"/>
+    <line id="line_bottom" class="cls-1" x1="75" y1="775" x2="875" y2="775"/>
+  </g>
+</svg>

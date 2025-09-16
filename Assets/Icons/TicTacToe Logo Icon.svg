@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="tictactoe_logo_icon" data-name="TicTacToe Logo Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1, .o_mark_svg {
+        fill: none;
+      }
+
+      .o_mark_svg {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 90px;
+      }
+	  
+	    @media (prefers-color-scheme: dark) {
+        .o_mark_svg {
+          stroke: #fff;
+        }
+        .x_mark_svg, #grid {
+          fill: #fff;
+        }
+      }
+	  
+	    @media (prefers-color-scheme: light) {
+        .o_mark_svg {
+          stroke: #000;
+        }
+        .x_mark_svg, #grid {
+          fill: #000;
+        }
+      }
+    </style>
+  </defs>
+  <g id="tictactoe_logo_icon">
+    <polygon id="grid" points="1080 530 550 530 550 0 530 0 530 530 0 530 0 550 530 550 530 1080 550 1080 550 550 1080 550 1080 530"/>
+    <polygon id="x_0" class="x_mark_svg" points="476.56 181.82 412.92 118.18 297.37 233.73 181.82 118.18 118.18 181.82 233.73 297.37 118.18 412.92 181.82 476.56 297.37 361.01 412.92 476.56 476.56 412.92 361.01 297.37 476.56 181.82"/>
+    <circle id="o_1" class="o_mark_svg" cx="782.63" cy="297.37" r="147.37"/>
+    <circle id="o_2" class="o_mark_svg" cx="297.37" cy="782.63" r="147.37"/>
+    <polygon id="x_3" class="x_mark_svg" points="961.82 667.08 898.18 603.44 782.63 718.99 667.08 603.44 603.44 667.08 718.99 782.63 603.44 898.18 667.08 961.82 782.63 846.27 898.18 961.82 961.82 898.18 846.27 782.63 961.82 667.08"/>
+    <circle id="clipping_circle" class="cls-1" cx="540" cy="540" r="540"/>
+  </g>
+</svg>
