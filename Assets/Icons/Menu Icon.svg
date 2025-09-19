@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .clip, .line {
+        fill: none;
+      }
+
+      .line {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 100px;
+      }
+
+      .line:hover {
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <g id="menu_icon">
+    <rect id="clipping_rectangle" class="clip" width="1080" height="1080"/>
+    <line id="line_top" class="line" x1="90" y1="240" x2="990" y2="240"/>
+    <line id="line_middle" class="line" x1="90" y1="540" x2="990" y2="540"/>
+    <line id="line_bottom" class="line" x1="90" y1="840" x2="990" y2="840"/>
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="tictactoe_icon" data-name="TicTacToe Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .mark_svg {
+        stroke-width: 60px;
+      }
+
+      .mark_svg, .grid_svg {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .grid_svg {
+        stroke-width: 15px;
+      }
+	  
+	    @media (prefers-color-scheme: dark) {
+        .mark_svg {
+          stroke: #fff;
+        }
+      }
+	  
+	    @media (prefers-color-scheme: light) {
+        .mark_svg {
+          stroke: #000;
+        }
+      }
+    </style>
+  </defs>
+  <g id="tictactoe_icon">
+    <g id="grid">
+      <line class="grid_svg" y1="720" x2="1080" y2="720"/>
+      <line class="grid_svg" y1="360" x2="1080" y2="360"/>
+      <line class="grid_svg" x1="720" x2="720" y2="1080"/>
+      <line class="grid_svg" x1="360" x2="360" y2="1080"/>
+    </g>
+    <g id="x_0">
+      <line class="mark_svg" x1="296" y1="56" x2="56" y2="296"/>
+      <line class="mark_svg" x1="56" y1="56" x2="296" y2="296"/>
+    </g>
+    <circle id="o_1" class="mark_svg" cx="540" cy="176" r="120"/>
+    <g id="x_2">
+      <line class="mark_svg" x1="1024" y1="56" x2="784" y2="296"/>
+      <line class="mark_svg" x1="784" y1="56" x2="1024" y2="296"/>
+    </g>
+    <circle id="o_3" class="mark_svg" cx="176" cy="540" r="120"/>
+    <g id="x_4">
+      <line class="mark_svg" x1="660" y1="420" x2="420" y2="660"/>
+      <line class="mark_svg" x1="420" y1="420" x2="660" y2="660"/>
+    </g>
+    <circle id="o_5" class="mark_svg" cx="904" cy="540" r="120"/>
+    <circle id="o_6" class="mark_svg" cx="176" cy="904" r="120"/>
+    <g id="x_7">
+      <line class="mark_svg" x1="660" y1="784" x2="420" y2="1024"/>
+      <line class="mark_svg" x1="420" y1="784" x2="660" y2="1024"/>
+    </g>
+  </g>
+</svg>
